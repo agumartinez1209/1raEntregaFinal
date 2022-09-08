@@ -8,11 +8,11 @@ const productosApi = {
 const carritosApi = {
     crearCarrito: () => {
         const options = { method: "POST" }
-        return fetch('/api/carritos', options)
+        return fetch('/api/carrito', options)
             .then(data => data.json())
     },
     getIds: () => {
-        return fetch('/api/carritos')
+        return fetch('/api/carrito')
             .then(data => data.json())
     },
     postProd: (idCarrito, idProd) => {
@@ -24,17 +24,17 @@ const carritosApi = {
             },
             body: JSON.stringify(data)
         }
-        return fetch(`/api/carritos/${idCarrito}/productos`, options)
+        return fetch(`/api/carrito/${idCarrito}/productos`, options)
     },
     getProds: idCarrito => {
-        return fetch(`/api/carritos/${idCarrito}/productos`)
+        return fetch(`/api/carrito/${idCarrito}/productos`)
             .then(data => data.json())
     },
     deleteProd: (idCarrito, idProducto) => {
         const options = {
             method: 'DELETE',
         }
-        return fetch(`/api/carritos/${idCarrito}/productos/${idProducto}`, options)
+        return fetch(`/api/carrito/${idCarrito}/productos/${idProducto}`, options)
     }
 }
 
